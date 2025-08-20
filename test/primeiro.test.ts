@@ -1,8 +1,11 @@
 import CreateCompany from "../src/aplication/usecases/company/CreateCompany"
 import Company from "../src/domain/entities/company/Company";
+import CompanyRepositoryMemory from "../src/infra/CompanyRepositoryMemory";
 
-test ("should enter in the park", function(){
-    const createCompany = new CreateCompany()
-    const company =  createCompany.run()
-    expect(company.name).toBe("tondel")
+test ("should enter in the park", async function(){
+    const companyRepositoryMemory = new CompanyRepositoryMemory()
+    const createCompany = new CreateCompany(companyRepositoryMemory)
+    const company = new Company(1,"inacio","uige","234")
+    const Createdcompany = await createCompany.run(company)
+    expect(Createdcompany).toBe(company)
 })

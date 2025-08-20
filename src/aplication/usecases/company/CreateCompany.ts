@@ -3,15 +3,14 @@ import IcompomanyRepository from "../../../domain/repositories/ICompanyRepositor
 
 
 export default class CreateCompany {
-    constructor(){
+    constructor(private readonly companyRepository : IcompomanyRepository){
 
     }
 
-    run ()  {
+    async run (company : Company) : Promise<Company> {
 
-        const company = new Company(1,"tondel","uige","6786547")
-        return company;
-
+        return await this.companyRepository.create(company)
+        
     }
 }
 
