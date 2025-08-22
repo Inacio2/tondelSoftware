@@ -9,7 +9,7 @@ const CompanyRepositoryMemory_1 = __importDefault(require("../src/infra/CompanyR
 test("should enter in the park", async function () {
     const companyRepositoryMemory = new CompanyRepositoryMemory_1.default();
     const createCompany = new CreateCompany_1.default(companyRepositoryMemory);
-    const company = new Company_1.default(1, "inacio", "uige", "234");
+    const company = new Company_1.default("ola", "", "njsj", "123");
     const Createdcompany = await createCompany.run(company);
-    expect(Createdcompany).toBe(company);
+    expect(Createdcompany).toStrictEqual(company);
 });
