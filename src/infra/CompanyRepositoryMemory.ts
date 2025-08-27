@@ -5,6 +5,7 @@ export default class CompanyRepositoryMemory implements IcompomanyRepository {
 
     create(company: Company): Promise<Company> {
         return Promise.resolve(company)
+    
     }   
     findall(): Promise<Company> {
         throw new Error("Method not implemented.");

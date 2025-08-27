@@ -1,9 +1,9 @@
 import Company from "../../../domain/entities/company/Company";
-import IcompomanyRepository from "../../../domain/repositories/ICompanyRepository";
+import IcompanyRepository from "../../../domain/repositories/ICompanyRepository";
 
 
 export default class CreateCompany {
-    constructor(private readonly companyRepository : IcompomanyRepository){
+    constructor(private readonly companyRepository : IcompanyRepository){
 
     }
 
