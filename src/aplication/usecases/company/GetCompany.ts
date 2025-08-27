@@ -8,10 +8,11 @@ export default class GetCompany {
     }
 
     async run (): Promise<Company>{
-         const company = (await this.companyRepository.findall());
+         const company = (await this.companyRepository.findall())[0];
          if(!company){
-            console.log("sem dados")
+            console.log("sem dados");
          }
+         return company;
 
     }
 }
