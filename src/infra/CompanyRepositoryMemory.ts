@@ -8,7 +8,7 @@ export default class CompanyRepositoryMemory implements IcompanyRepository {
         return Promise.resolve(company)
     
     }   
-    findall(): Promise<Company> {
+    findall(): Promise<Company[]> {
         throw new Error("Method not implemented.");
     }
 

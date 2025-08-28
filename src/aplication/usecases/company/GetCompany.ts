@@ -1,5 +1,7 @@
 import Company from "../../../domain/entities/company/Company";
 import IcompanyRepository from "../../../domain/repositories/ICompanyRepository";
+import { ErrorCode } from "../../../error/ErrorCodes";
+import { throwError } from "../../../error/ErrorHandler";
 
 
 export default class GetCompany {
@@ -9,9 +11,11 @@ export default class GetCompany {
 
     async run (): Promise<Company>{
          const company = (await this.companyRepository.findall())[0];
+
          if(!company){
-            console.log("sem dados");
+            throwError("Empresa nao encontrada",ErrorCode.COMPANY_NOT_FOUND)
          }
+         
          return company;
 
     }
