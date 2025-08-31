@@ -19,7 +19,8 @@
     "test": "tsc && jest"
   },
   "dependencies": {
-    "jest": "^30.0.5"
+    "jest": "^30.0.5",
+    "pg-promise": "^12.1.2"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
